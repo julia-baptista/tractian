@@ -1,8 +1,12 @@
 import React from 'react';
+import NavBar from '../components/Navbar';
 
 const Units = () => (
-  <div className="homepage">
-    <h1>Units</h1>
+  <div>
+    <NavBar/>
+    <div className="container">
+      <h1>Units</h1>
+    </div>
   </div>
 )
 

@@ -1,8 +1,12 @@
 import React from 'react';
+import NavBar from '../components/Navbar';
 
 const Assets = () => (
-  <div className="assets">
-    <h1>Assets</h1>
+  <div>
+    <NavBar/>
+    <div className="container">
+      <h1>Assets</h1>
+    </div>
   </div>
 )
 

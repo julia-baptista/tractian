@@ -1,8 +1,12 @@
 import React from 'react';
+import NavBar from '../components/Navbar';
 
 const Graphics = () => (
-  <div className="graphics">
-    <h1>Graphics</h1>
+  <div>
+    <NavBar/>
+    <div className="container">
+      <h1>Graphics</h1>
+    </div>
   </div>
 )
 
