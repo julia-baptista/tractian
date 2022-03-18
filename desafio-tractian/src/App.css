@@ -25,6 +25,32 @@
   padding-bottom: 10px;
 }
 
+.display-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flexed-items {
+  display: flex;
+}
+.ml-05 {
+  margin-left: 5%;
+}
+
+.pl-05 {
+  padding-left: 5%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+td {
+  padding: 8px;
+  border: 1px solid gray;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

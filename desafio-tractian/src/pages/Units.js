@@ -1,13 +1,12 @@
 import React from 'react';
-import NavBar from '../components/Navbar';
 
-const Units = () => (
-  <div>
-    <NavBar/>
-    <div className="container">
-      <h1>Units</h1>
-    </div>
-  </div>
-)
+function Units() {
+  return (
+
+      <div className="container">
+        <h1>Units</h1>
+      </div>
+  )
+}
 
 export default Units;

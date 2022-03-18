@@ -3,27 +3,33 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import InfoProvider from './context/infoProvider';
 import HomePage from './pages/HomePage';
 import Assets from './pages/Assets';
+import Asset from './pages/Asset';
 import Companies from './pages/Companies';
 import Units from './pages/Units';
 import Users from './pages/Users';
 import Graphics from './pages/Graphics';
+import NavBar from './components/Navbar';
+import Error from './pages/Error';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <InfoProvider>
       <BrowserRouter>
-        <InfoProvider>
+          <NavBar/>
           <Routes>
             <Route exact path="/" element={<HomePage/>} />
-            <Route path="/solucoes" element={<Assets/>} />
-            <Route exact path="/empresas" element={<Companies/>} />
-            <Route exact path="/unidades" element={<Units/> } />
-            <Route exact path="/usuarios" element={<Users/> } />
-            <Route exact path="/graficos" element={<Graphics/> } />
+            <Route exact path="/assets" element={<Assets/>} />
+            <Route path="/assets/:id" element={<Asset/>} />
+            <Route path="/empresas" element={<Companies/>} />
+            <Route path="/unidades" element={<Units/> } />
+            <Route path="/usuarios" element={<Users/> } />
+            <Route path="/graficos" element={<Graphics/> } />
+            <Route path="*" element={<Error /> } />
           </Routes>
-        </InfoProvider>
       </BrowserRouter>
+      </InfoProvider>
     </div>
   );
 }

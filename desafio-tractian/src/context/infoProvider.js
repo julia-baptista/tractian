@@ -1,13 +1,93 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import InfoContext from './infoContext';
 
 function InfoProvider({ children }) {
+  const [allSensors, setAllSensors] = useState([]);
+  // const [currentSensor, setCurrentSensor] = useState({});
+
+  const REQUEST_FAILED = 'Falha na requisiçao';
   
+  // Acessar todos os ativos
+    const requestAllSensors = async () => {
+      const request = await axios
+        .get('https://my-json-server.typicode.com/tractian/fake-api/assets')
+        .then((res) => res.data)
+        .catch((err) => err.response);
+  
+      if (!request) return REQUEST_FAILED;
+      setAllSensors(request);
+      return request;
+    };
+
+  // Acessar ativo pelo id
+  const requestSingleSensor = async (id) => {
+    const request = await axios
+      .get(`https://my-json-server.typicode.com/tractian/fake-api/assets/${id}`)
+      .then((res) => res.data)
+      .catch((err) => err.response);
+
+    if (!request) return REQUEST_FAILED;
+    return request;
+  };
+
+  // Acessar todas as Unidades
+  const requestAllUnits = async () => {
+    const request = await axios
+      .get('https://my-json-server.typicode.com/tractian/fake-api/units')
+      .then((res) => res.data)
+      .catch((err) => err.response);
+
+    if (!request) return REQUEST_FAILED;
+    console.log('--------All Units:', request)
+    return request;
+  };
+
+  // Acessar as Unidades pelo id
+  const requestUnitById = async (id) => {
+    const request = await axios
+      .get(`https://my-json-server.typicode.com/tractian/fake-api/units/${id}`)
+      .then((res) => res.data)
+      .catch((err) => err.response);
+
+    if (!request) return REQUEST_FAILED;
+    console.log('--------All Units:', request)
+    return request;
+  };
+
+  // Acessar todas as Empresas
+  const requestAllCompanies = async () => {
+    const request = await axios
+      .get('https://my-json-server.typicode.com/tractian/fake-api/companies')
+      .then((res) => res.data)
+      .catch((err) => err.response);
+
+    if (!request) return REQUEST_FAILED;
+    console.log('--------All Companies:', request)
+    return request;
+  };
+
+  // Acessar Empresa pelo id
+  const requestCompanyById = async (id) => {
+    const request = await axios
+      .get(`https://my-json-server.typicode.com/tractian/fake-api/companies/${id}`)
+      .then((res) => res.data)
+      .catch((err) => err.response);
+
+    if (!request) return REQUEST_FAILED;
+    console.log('--------All Companies:', request)
+    return request;
+  }
 
   const contextValues = {
- 
+    allSensors,
+    requestAllSensors,
+    requestSingleSensor,
+    requestAllUnits,
+    requestUnitById,
+    requestAllCompanies,
+    requestCompanyById,
   };
 
   return (
@@ -19,8 +99,8 @@ function InfoProvider({ children }) {
   );
 }
 
-export default InfoProvider;
-
 InfoProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default InfoProvider;

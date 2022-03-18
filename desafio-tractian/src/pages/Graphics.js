@@ -1,13 +1,17 @@
 import React from 'react';
-import NavBar from '../components/Navbar';
+// import Highcharts from 'highcharts';
+// import HighchartsReact from 'highcharts-react-official';
+import Healthscore from '../components/Healthscore';
 
-const Graphics = () => (
-  <div>
-    <NavBar/>
-    <div className="container">
-      <h1>Graphics</h1>
-    </div>
-  </div>
-)
+
+function Graphics() {
+
+  return (
+      <div className="container">
+        <h1>Gráficos</h1>
+          <Healthscore />
+      </div>
+  )
+}
 
 export default Graphics;
