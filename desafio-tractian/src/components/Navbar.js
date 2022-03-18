@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu } from 'antd';
+import Logo from '../img/logo.svg'
 import './Navbar.css';
 
 class NavBar extends React.Component {
@@ -15,14 +16,11 @@ class NavBar extends React.Component {
   render() {
     const { current } = this.state;
     return (
-      <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" className="bg-blue-900 center-items pb-10">
-        <Menu.Item key="alipay1">
+      <>
+      <span className="nav-logo"><img src={Logo} alt="linkedin"  height="23"/></span>
+      <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" className="bg-blue-900 center-items pb-10 relative">
+        <Menu.Item key="alipay2">
           <a href="/" rel="noopener noreferrer">
-            Home
-          </a>
-        </Menu.Item>
-        <Menu.Item key="alipay0">
-          <a href="/assets" rel="noopener noreferrer">
             Soluções
           </a>
         </Menu.Item>
@@ -47,6 +45,7 @@ class NavBar extends React.Component {
           </a>
         </Menu.Item>
       </Menu>
+    </>
     );
   }
 }

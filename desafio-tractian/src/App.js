@@ -20,8 +20,7 @@ function App() {
       <BrowserRouter>
           <NavBar/>
           <Routes>
-            <Route exact path="/" element={<HomePage/>} />
-            <Route exact path="/assets" element={<Assets/>} />
+            <Route exact path="/" element={<Assets/>} />
             <Route path="/assets/:id" element={<Asset/>} />
             <Route path="/empresas" element={<Companies/>} />
             <Route path="/unidades" element={<Units/> } />
