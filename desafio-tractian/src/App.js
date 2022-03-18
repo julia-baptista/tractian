@@ -10,6 +10,7 @@ import Users from './pages/Users';
 import Graphics from './pages/Graphics';
 import NavBar from './components/Navbar';
 import Error from './pages/Error';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/graficos" element={<Graphics/> } />
             <Route path="*" element={<Error /> } />
           </Routes>
+          <Footer />
       </BrowserRouter>
       </InfoProvider>
     </div>

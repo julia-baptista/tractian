@@ -43,8 +43,8 @@ function Healthscore() {
   useEffect(() => {
     const sensors = allSensors.map((item) => ( item.healthscore ? item.name : null ));
     setHAssets(sensors);
-    const healthscores = allSensors.map((sensor) => ( sensor.healthscore ? sensor.healthscore : null ));
-    setHealthscores(healthscores);
+    const healthscoreArray = allSensors.map((item) => ( item.healthscore ? item.healthscore : null ));
+    setHealthscores(healthscoreArray);
   }, [allSensors]);
 
   const options = { 
@@ -67,7 +67,7 @@ function Healthscore() {
   }
 
   return (
-      <div className="container">
+      <div className="container mb-80 box-shadow p-50">
         {
           healthscores
           ? <HighchartsReact highcharts={Highcharts} options={options} />
