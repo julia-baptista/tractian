@@ -1,0 +1,17 @@
+.company-form-container {
+  margin-top: 50px;
+  padding: 40px
+}
+
+.company-form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.default-input {
+  border: 1px solid #f0f0f0;
+  width: 50%;
+}
+
+

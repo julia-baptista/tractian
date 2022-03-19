@@ -3,13 +3,12 @@ import { useParams } from "react-router-dom";
 import InfoContext from '../context/infoContext';
 import Sensor from '../components/Sensor';
 import Table from '../components/Table';
-import ResponsibleForm from '../components/ResponsibleForm';
 import '../App.css'
 
 function Asset() {
   let { id } = useParams();
   const [currentSensor, setCurrentSensor] = useState({});
-  const { requestSingleSensor, requestAllUnits } = useContext(InfoContext);
+  const { requestSingleSensor } = useContext(InfoContext);
 
   useEffect(() => {
     const response = async () => {

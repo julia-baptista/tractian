@@ -16,7 +16,7 @@ function Assets() {
 
   return (
     <div className="container">
-      <h1>Soluções</h1>
+      <h1 className="page-title">Soluções</h1>
       <div className="display-grid">
       {
         allSensors ? allSensors.map((sensor, index) => (

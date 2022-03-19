@@ -8,7 +8,7 @@ function Sensor({sensor}) {
     <div className='mb-30'>
     <Card
       hoverable
-      style={{ width: 240 }}
+      style={{ width: 240}}
       cover={<img alt="example" src={sensor.image} height="179"/>}
     >
       <Meta title={sensor.name} />
