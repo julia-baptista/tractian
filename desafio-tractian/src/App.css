@@ -1,0 +1,129 @@
+@import "~antd/dist/antd.css";
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  position: absolute;
+  left: 50px;
+  top: 10px;
+}
+
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.page-title {
+  color: rgba(0, 0, 0, 0.7)
+}
+
+.bg-blue-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138/var(--tw-bg-opacity));
+}
+
+.center-items {
+  display: flex;
+  justify-content: center;
+}
+
+.center-items-vertical {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.p-05 {
+  padding: 5px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-50 {
+  padding: 50px;
+}
+
+.pl-05 {
+  padding-left: 5%;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.ml-05 {
+  margin-left: 5%;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.display-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flexed-items {
+  display: flex;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+td {
+  padding: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.box-shadow {
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%), 0 5px 12px 4px rgb(0 0 0 / 9%);
+}
+
+.footer {
+  background-color: #2563eb;
+  color: white;
+  height: 400px;
+  margin-top: 100px;
+}
+
+.logo {
+  margin: 10px;
+}
+
+.card-list {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
