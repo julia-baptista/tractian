@@ -30,17 +30,16 @@ function Asset() {
             <Sensor sensor={ currentSensor } />
             <div>
              <Table sensor={ currentSensor } />
-             <Link to={ '/' }>
-             <Button type='primay'>Voltar</Button>
-             </Link>
             </div>
             
           </div>
           : <p>Loading ...</p>
         }
-      {/* <div>
-        <ResponsibleForm />
-      </div>   */}
+    </div>
+    <div className='container'>
+      <Link to={ '/' }>
+        <Button type='primay'>Voltar</Button>
+      </Link>
     </div>
   </div>
   )

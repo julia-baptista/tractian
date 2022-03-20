@@ -12,7 +12,6 @@ function Table({sensor}) {
   const { requestUnitById, requestCompanyById } = useContext(InfoContext);
   const [currentUnit, setCurrentUnit] = useState({});
   const [currentCompany, setCurrentCompany] = useState({});
-  const [responsible, setResposible] = useState('A definir');
   
   // Selecionar unidade
   useEffect(() => {
@@ -29,7 +28,6 @@ function Table({sensor}) {
     };
     response();
   },[requestCompanyById, sensor.companyId]);
-
 
   return (
     <div className="ml-05">
@@ -106,10 +104,6 @@ function Table({sensor}) {
                 ? <td>{currentCompany.name}</td>
                 : null
             }
-          </tr>
-          <tr>
-            <td>Responsável:</td>
-            <td>{responsible}</td>
           </tr>
         </tbody>
       </table>

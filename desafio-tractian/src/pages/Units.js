@@ -6,6 +6,7 @@ function Units() {
   const { requestAllUnits, requestAllCompanies } = useContext(InfoContext);
   const [allUnits, setAllUnits] = useState([]);
   const [allCompanies, setAllCompanies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=> {
     const response = async () => {
@@ -20,13 +21,20 @@ function Units() {
     };
     response();
   }, [requestAllCompanies]);
+
+  useEffect(()=> {
+    if(allUnits.length >=1 && allCompanies.length >=1 ) {
+      setIsLoading(false);
+    }
+  }, [allUnits, allCompanies]);
  
   return (
     <div className="container">
       <h1>Units</h1>
       <div>
       {
-        allUnits && allCompanies  ? allUnits.map((unit, index) => {
+        !isLoading
+        ? allUnits.map((unit, index) => {
           let company = allCompanies.find(item => item.id ===  unit.companyId);
           return <Card title={unit.name} bordered={false} key={unit.id} className="card-list">
             { `Empresa: ${company.name}` }
