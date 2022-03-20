@@ -1,0 +1,11 @@
+.users-form {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #40a9ff;
+}
+
+.users-form label {
+  color: white;
+  margin-right: 40px;
+}
