@@ -40,7 +40,6 @@ function InfoProvider({ children }) {
       .catch((err) => err.response);
 
     if (!request) return REQUEST_FAILED;
-    console.log('--------All Units:', request)
     return request;
   };
 
@@ -52,7 +51,6 @@ function InfoProvider({ children }) {
       .catch((err) => err.response);
 
     if (!request) return REQUEST_FAILED;
-    console.log('--------All Units:', request)
     return request;
   };
 
@@ -64,7 +62,6 @@ function InfoProvider({ children }) {
       .catch((err) => err.response);
 
     if (!request) return REQUEST_FAILED;
-    console.log('--------All Companies:', request)
     return request;
   };
 
@@ -76,9 +73,20 @@ function InfoProvider({ children }) {
       .catch((err) => err.response);
 
     if (!request) return REQUEST_FAILED;
-    console.log('--------All Companies:', request)
     return request;
   }
+
+  // Acessar todos os usuários
+  const requestAllUsers = async () => {
+    const request = await axios
+      .get('https://my-json-server.typicode.com/tractian/fake-api/users')
+      .then((res) => res.data)
+      .catch((err) => err.response);
+
+    if (!request) return REQUEST_FAILED;
+    return request;
+  };
+
 
   const contextValues = {
     allSensors,
@@ -88,6 +96,7 @@ function InfoProvider({ children }) {
     requestUnitById,
     requestAllCompanies,
     requestCompanyById,
+    requestAllUsers,
   };
 
   return (

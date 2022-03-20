@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 import InfoContext from '../context/infoContext';
 import Sensor from '../components/Sensor';
 import Table from '../components/Table';
@@ -26,7 +28,13 @@ function Asset() {
           currentSensor.sensors ? 
           <div className="flexed-items">
             <Sensor sensor={ currentSensor } />
-            <Table sensor={ currentSensor } />
+            <div>
+             <Table sensor={ currentSensor } />
+             <Link to={ '/' }>
+             <Button type='primay'>Voltar</Button>
+             </Link>
+            </div>
+            
           </div>
           : <p>Loading ...</p>
         }
